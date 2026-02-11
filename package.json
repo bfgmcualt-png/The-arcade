@@ -1,7 +1,6 @@
 {
   "name": "the-arcade",
   "version": "1.0.0",
-  "description": "Multiplayer arcade game server",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
