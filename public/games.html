@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Games - The Arcade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      padding: 20px 0;
+      border-bottom: 2px solid white;
+      font-size: 24px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      padding-bottom: 5px;
+    }
+
+    .navbar a:hover {
+      border-bottom: 2px solid white;
+    }
+
+    .active {
+      border-bottom: 2px solid white;
+    }
+
+    .container {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .game-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .game-card {
+      border: 2px solid white;
+      padding: 20px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .game-card:hover {
+      background: white;
+      color: black;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <a href="/">Home</a>
+    <a href="/games.html" class="active">Games</a>
+    <a href="#">Proxy</a>
+  </div>
+
+  <div class="container">
+    <h1>Games</h1>
+
+    <div class="game-list">
+      <div class="game-card">Game 1</div>
+      <div class="game-card">Game 2</div>
+      <div class="game-card">Game 3</div>
+    </div>
+  </div>
+
+</body>
+</html>
