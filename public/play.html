@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Play - The Arcade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      padding: 20px 0;
+      border-bottom: 2px solid white;
+      font-size: 24px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+    }
+
+    iframe {
+      width: 90%;
+      height: 80vh;
+      margin-top: 20px;
+      border: 2px solid white;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <a href="/">Home</a>
+    <a href="/games.html">Games</a>
+    <a href="#">Proxy</a>
+  </div>
+
+  <h1 id="gameTitle">Loading...</h1>
+
+  <iframe id="gameFrame"></iframe>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const game = params.get("game");
+
+    const gameFrame = document.getElementById("gameFrame");
+    const gameTitle = document.getElementById("gameTitle");
+
+    const games = {
+      tetris: {
+        title: "Tetris",
+        url: "https://tetris.com/play-tetris"
+      },
+      "2048": {
+        title: "2048",
+        url: "https://play2048.co/"
+      },
+      hextris: {
+        title: "Hextris",
+        url: "https://hextris.io/"
+      }
+    };
+
+    if (games[game]) {
+      gameTitle.textContent = games[game].title;
+      gameFrame.src = games[game].url;
+    } else {
+      gameTitle.textContent = "Game not found";
+    }
+  </script>
+
+</body>
+</html>
